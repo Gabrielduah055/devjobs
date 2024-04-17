@@ -1,0 +1,111 @@
+.container {
+    width: 100%;
+}
+
+.cards {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-block: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin-block: 2rem;
+    padding: .5rem 1rem;
+    border: none;
+    outline: none;
+    background-color: var(--primary-violet);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.wrapper {
+    width: 100%;
+    margin-top: -2.5rem;
+}
+
+.search-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 5px;
+    background-color: white;
+    padding: 1rem;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    
+}
+
+.input .title {
+    font-size: 1rem;
+    padding: .5rem;
+    width: 500px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-right: 1px solid red;
+    cursor:pointer;
+}
+
+.input .location {
+    width: 300px;
+    font-size: 1rem;
+    padding: .5rem;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-right: 1px solid red;
+    cursor:pointer;
+
+}
+
+.input-filter {
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.input-filter .filter {
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+    cursor:pointer;
+}
+
+.input-filter .filter label {
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.search-btn {
+    border: none;
+    outline: none;
+    background-color: var(--primary-violet);
+    color: white;
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+}

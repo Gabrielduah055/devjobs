@@ -1,0 +1,20 @@
+
+    <div class="container" *ngIf="job">
+
+        <div class="logo" [style.background-color]="job.logoBackground">
+            <img [src]=job.logo alt="">
+            
+        </div>
+        <div class="card">
+            <div class="time">
+                <span> {{job.postedAt}} . </span>
+                <span> {{job.contract}}</span>
+            </div>
+            <h4>{{job.position}}</h4>
+            <p>{{job.company}}</p>
+            <div class="location">
+                <p>{{job.location}}</p>
+            </div>
+        </div>
+        
+    </div>

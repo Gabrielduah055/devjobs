@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Kumbh Sans", sans-serif;
+}
+
+body {
+    background-color: var(--secondary-light-grey);
+}
+
+:root {
+    --primary-violet:  #5964E0;
+    --primary-light-violet:  #939BF4;
+    --primary-very-dark-blue: #19202D;
+    --primary-midnight: #121721;
+
+    --secondary-white: #FFFFFF;
+    --secondary-light-grey: #F4F6F8;
+    --secondary-gray: #9DAEC2;
+    --secondary-dark-gray: #6E8098;
+}

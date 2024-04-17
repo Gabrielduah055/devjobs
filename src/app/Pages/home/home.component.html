@@ -1,0 +1,34 @@
+<div class="container">
+    <app-header></app-header>
+    <div class="wrapper">
+        <div class="search-container">
+            <div class="input">
+                <img src="../../../assets/icon-search.svg" alt="">
+                <input type="text" placeholder="Filter by title, companies expetise..." class="title" >
+            </div>
+            <div class="input">
+                <img src="../../../assets/icon-location.svg" alt="">
+                <input type="text" placeholder="Filter by location..." class="location">
+            </div>
+            <div class="input input-filter">
+                <div class="filter">
+                    <input type="checkbox"/>
+                    <label for="">Full time only</label>
+                </div>
+                
+                <button class="search-btn">Search</button>
+            </div>
+    
+        </div>
+    </div>
+    <div class="cards">
+        <div class="card" >
+            <app-card *ngFor="let job of jobs | async" [job]="job">
+            </app-card>
+        </div>
+
+        <button class="btn" >Load More</button>
+    </div>
+    
+    
+</div>

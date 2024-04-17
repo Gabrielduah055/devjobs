@@ -1,0 +1,24 @@
+.wrapper {
+    width: 100%;
+    height: 15vh;
+    background: url("../../../assets/bg-pattern-header.svg");
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-size: cover;
+    border-bottom-left-radius: 100px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 2rem;
+}
+
+.toggle {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}

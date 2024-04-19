@@ -37,3 +37,13 @@
         padding-inline: 1.5rem;
     }
 }
+
+@media screen and (max-width:768px)  {
+    .wrapper {
+        width: 100%;
+    }
+    .container  {
+        width:calc(100% - 5rem);
+        margin: 0 auto;
+    }
+}

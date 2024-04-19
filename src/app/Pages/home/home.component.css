@@ -57,7 +57,7 @@
 .input .title {
     font-size: 1rem;
     padding: .5rem;
-    width: 500px;
+    width: 400px;
     outline: none;
     border: none;
     background-color: transparent;
@@ -66,7 +66,7 @@
 }
 
 .input .location {
-    width: 300px;
+    width: 400px;
     font-size: 1rem;
     padding: .5rem;
     outline: none;
@@ -177,5 +177,66 @@
 }
 
 @media screen and (max-width:768px) {
+    .container {
+        width: 100%;
+    }
+
+    .search-container {
+        width: calc(100% - 3rem);
+        margin: 0 auto;
+        display: flex;
+    }
+
+    .search-container .input .title {
+        width: 150px;
+        font-size: .9rem;
+    }
+    .search-container .input .location {
+        width: 150px;
+        font-size: .9rem;
+    } 
+   
+    .search-container .input .filter label {
+        font-size: .7rem ;
+    } 
+   
+    .search-btn {
+        padding: .5rem;
+        font-size: .9rem;
+    }
+
+    .cards { 
+        width: calc(100% - 2rem);
+        margin: 0 auto;
+        margin-block: 2rem;
+    }
+    
     
 }
+
+@media screen and (min-width:768px) and (max-width:1000px) {
+    .container {
+        width: 100%;
+    }
+    .search-container {
+        width: calc(100% - 2rem);
+    }
+
+    .input .title {
+        width: 250px;
+    }
+    .input .location {
+        width: 250px;
+    }
+    
+    .input .filter label {
+        font-size: .7rem;
+    }
+
+    .search-btn {
+        padding: .7rem;
+        font-size: .9rem;
+    }
+}
+
+

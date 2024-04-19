@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http'
 import { Observable, catchError, throwError } from 'rxjs';
 import { Jobs } from '../types';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +10,14 @@ import { Jobs } from '../types';
 export class JobsService {
 
   private jsonUrl = 'https://64281ee346fd35eb7c4bfc31.mockapi.io/dev';
+  private isDarkTheme = new BehaviorSubject<boolean>(false);
+  public isDarkTheme$ = this.isDarkTheme.asObservable()
 
   constructor(private http: HttpClient) { }
+
+  toggleTheme() {
+    this.isDarkTheme.next(!this.isDarkTheme.value)
+  }
 
   getJobs() :Observable<Jobs[]> {
     return this.http.get<Jobs[]>(this.jsonUrl)

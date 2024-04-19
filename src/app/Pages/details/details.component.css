@@ -26,7 +26,9 @@
    display: flex;
    align-items: center;
    justify-content: center;
-   padding-block: 2.4rem;
+   padding-block: 2.8rem;
+   border-top-left-radius: 5px;
+   border-bottom-left-radius: 5px;
 }
 
 .company-names {
@@ -58,8 +60,8 @@
 
 .job-details .job-heading {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: flex-start;
     margin-block-end: 2rem;
 }
 
@@ -84,7 +86,7 @@
 }
 
 .apply {
-    padding: 1rem 2rem;
+    padding: .5rem 2rem;
     cursor: pointer;
     font-size: 1.2rem;
     border: none;
@@ -93,6 +95,7 @@
     color: white;
     font-weight: 600;
     border-radius: 5px;
+    margin-top: 2rem;
 }
 
 .job-content {
@@ -133,6 +136,7 @@ ol li::marker{
 @media screen and (max-width:375px){
     .container {
         width: 100%;
+        padding: 1rem;
     }
 
     .logo {
@@ -145,10 +149,8 @@ ol li::marker{
 
     .header {
         width: 100%;
-        margin-inline: 1rem;
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
         height: 100%;
     }
@@ -168,4 +170,68 @@ ol li::marker{
     .site {
         margin-bottom: 1.5rem;
     }
+
+    .job-details {
+        width: 100%;
+        padding: .9rem;
+    }
+
+    .job-heading {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+    }
+
+    .heading {
+        margin-block-end: 2rem;
+    }
+
+    .job-details .job-heading .heading h3 {
+        font-size: 1rem;
+    }
+
+    .apply {
+        display: block;
+        width: 100%;
+        font-weight: 500;
+        font-size: .9rem;
+        padding: .5rem 2rem;
+    }
+
+   
+}
+
+@media screen and (max-width:768px) {
+       .container {
+        width: 100%;
+       }
+
+       .job-details {
+            width: calc(100% - 2rem);
+            margin: 0 auto;
+            margin-block: 2rem;
+       }
+
+       .job-details .job-heading .heading h3{
+        font-size: 1rem;
+       }
+
+       .job-details .job-heading {
+        display: flex;
+        align-items: flex-start;
+       }
+
+    
+       .job-details .job-heading .apply {
+        font-size: 1rem;
+        padding: .5rem 1rem;
+        margin-top: 1.5rem;
+       }
+
+       .header {
+        width: calc(100% - 2rem);
+        margin: 0 auto;
+       }
+    
 }

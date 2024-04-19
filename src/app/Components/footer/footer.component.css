@@ -33,3 +33,36 @@
 .job-details p {
     color: var(--secondary-gray);
 }
+
+@media screen and (max-width:375px) {
+    .wrapper {
+        width: 100%;
+    }
+
+    .job-details {
+        display: none;
+    }
+
+    .apply {
+        display: block;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:768px){
+   .container {
+    padding-inline: 1.5rem;
+   }
+
+   .job-details h2 {
+    font-size: 1.3rem;
+   }
+   .job-details p {
+    font-size: .9rem;
+   }
+
+   .apply {
+    font-size: .8rem;
+    padding: .6rem 2rem; 
+   }
+}

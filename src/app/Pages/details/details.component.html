@@ -1,1 +1,50 @@
-<p>details works!</p>
+ <div class="container" *ngIf="jobDetail$ | async as job">
+    <div class="header">
+        <div class="logo">
+            <div class="background" [style.background-color]="job.logoBackground">
+                <img [src]="job.logo" alt="">
+            </div>
+            <div class="company-names">
+                <h4>{{job.company}}</h4>
+                <p>{{job.website}}</p>
+            </div>
+            
+        </div>
+        <button class="site">Company Site</button>
+    </div>
+
+    
+    <div class="job-details">
+        <div class="job-heading">
+            <div class="heading">
+                <span>{{job.postedAt}} . {{job.contract}}</span>
+                <h3>{{job.position}}</h3>
+                <p>{{job.location}}</p>
+            </div>
+            <button class="apply">Apply Now</button>
+            
+        </div>
+
+        <div class="job-content">
+            <p>{{job.description}}</p>
+        </div>
+        <div class="requirements">
+            <h2>Requirements</h2>
+            <p>{{job.requirements.content}}</p>
+            <ul >
+                <li *ngFor="let requirementItem of job.requirements.items">{{requirementItem}}</li>
+            </ul>
+           <div class="requirements">
+            <h2>What you will do</h2>
+            <p>{{job.role.content}}</p>
+            <ol>
+                <li *ngFor="let roleItem of job.role.items">{{roleItem}} </li>
+            </ol>
+           </div>
+        </div>
+
+    </div>
+
+ </div>
+ 
+ <app-footer></app-footer>

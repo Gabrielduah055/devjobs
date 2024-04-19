@@ -1,5 +1,5 @@
 
-    <div class="container" *ngIf="job">
+    <div class="container" *ngIf="job" [routerLink]="'details/' + job.id" >
 
         <div class="logo" [style.background-color]="job.logoBackground">
             <img [src]=job.logo alt="">

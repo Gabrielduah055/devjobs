@@ -5,7 +5,6 @@
     background-repeat: no-repeat;
     object-fit: cover;
     background-size: cover;
-    border-bottom-left-radius: 100px;
 }
 
 .container {
@@ -21,4 +20,20 @@
     display: flex;
     gap: 1rem;
     align-items: center;
+}
+
+@media  screen and (max-width:375px) {
+    .wrapper {
+        width: 100%;
+        background-image: url('../../../assets/logos/Triangle.png');
+        object-fit: cover;
+        background-repeat: no-repeat;
+        border-bottom-left-radius: none;
+        height: 20vh;
+    }
+
+    .container {
+        width: 100%;
+        padding-inline: 1.5rem;
+    }
 }

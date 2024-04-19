@@ -1,34 +1,50 @@
 <div class="container">
-    <app-header></app-header>
     <div class="wrapper">
         <div class="search-container">
             <div class="input">
                 <img src="../../../assets/icon-search.svg" alt="">
-                <input type="text" placeholder="Filter by title, companies expetise..." class="title" >
+                <input 
+                    type="text" 
+                    placeholder="Filter by title, companies expetise..." 
+                    class="title"
+                    [(ngModel)]="searchTitle"/>
             </div>
-            <div class="input">
+            <div class="input input-location">
                 <img src="../../../assets/icon-location.svg" alt="">
-                <input type="text" placeholder="Filter by location..." class="location">
+                <input 
+                    type="text" 
+                    placeholder="Filter by location..." class="location"
+                    [(ngModel)]="searchLocation"
+                    />
             </div>
             <div class="input input-filter">
                 <div class="filter">
-                    <input type="checkbox"/>
+                    <input type="checkbox"
+                    [(ngModel)]="fullTimeOnly"/>
                     <label for="">Full time only</label>
                 </div>
                 
-                <button class="search-btn">Search</button>
+                <button class="search-btn" (click)="search()">Search</button>
+            </div>
+
+            <div class="icon-placeholder" >
+                <img src="../../../assets/logos/icon-filter.svg" alt="">
+                <ion-icon name="search"></ion-icon>
             </div>
     
         </div>
     </div>
-    <div class="cards">
-        <div class="card" >
-            <app-card *ngFor="let job of jobs | async" [job]="job">
-            </app-card>
+        <div class="cards">
+                <div class="card" >
+                    <app-card *ngFor="let job of searchedJobs" [job]="job">
+                    </app-card>
+                </div>
+                
+            
+    
+            <button class="btn" >Load More</button>
         </div>
-
-        <button class="btn" >Load More</button>
-    </div>
+        
     
     
 </div>

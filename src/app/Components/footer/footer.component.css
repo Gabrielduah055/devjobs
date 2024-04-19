@@ -1,0 +1,35 @@
+.wrapper {
+    width: 100%;
+    background-color: white;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1.5rem;
+}
+
+.apply {
+    padding: 1rem 2rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+    background-color: var(--primary-violet);
+    color: white;
+    font-weight: 600;
+    border-radius: 5px;
+}
+ 
+.job-details {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.job-details p {
+    color: var(--secondary-gray);
+}

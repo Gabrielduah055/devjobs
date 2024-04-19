@@ -9,7 +9,10 @@ import { Jobs } from 'src/app/types';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  searchTitle:string = '';
+  searchLocation: string = '';
+  fullTimeOnly:boolean = false;
+  searchedJobs: Jobs[] = []
  
   jobs!: Observable<Jobs[]>;
   startIndex = 0;
@@ -19,6 +22,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
      this.jobs = this.JobsService.getJobs()
+     this.search();
   }
 
   loadMore():void {
@@ -30,10 +34,17 @@ export class HomeComponent implements OnInit {
     return this.jobs ? this.endIndex < (this.jobs as any).length: true;
   }
 
- 
+  search(): void {
+    this.jobs.subscribe(jobs => {
+      this.searchedJobs = jobs.filter(job => {
+        let titleMatch = job.position.toLowerCase().includes(this.searchTitle.toLowerCase());
+        let locationMatch = job.location.toLowerCase().includes(this.searchLocation.toLowerCase());
+        let fullTimeMatch = !this.fullTimeOnly || job.contract;
 
-  
-
+        return titleMatch && locationMatch && fullTimeMatch
+      })
+    })
+  }
 
 
  

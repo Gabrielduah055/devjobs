@@ -8,12 +8,11 @@
     margin-block: 3rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .card {
     display: grid;
-    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
@@ -108,4 +107,71 @@
     border-radius: 5px;
     font-weight: 500;
     cursor: pointer;
+}
+
+.icon-placeholder {
+    display: none;
+}
+
+
+/* MEDIA QUERY FOR TABLET SCREENS */
+
+
+
+@media screen and (max-width:375px){
+    .wrapper {
+        width: 100%;
+    }
+
+    .search-container {
+        margin-inline: 1rem;
+        display: flex;
+    }
+
+    .search-btn {
+        display: none;
+    }
+
+    .input-location {
+        display: none;
+    }
+
+    .input-filter {
+        display: none;
+    }
+
+    .input .title {
+        width: 90%;
+        border-right: none;
+        font-size: .9rem;
+
+    }
+    .input img {
+        display: none;
+    }
+
+    .icon-placeholder {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+            
+    .icon-placeholder ion-icon {
+        width: 22px;
+        height: 22px;
+        background-color: var(--primary-violet);
+        padding: .7rem;
+        border-radius: 4px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .card {
+        width: 100%;
+        place-items: center;
+        padding: 1rem;
+    }
+
+    
 }

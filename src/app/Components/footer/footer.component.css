@@ -1,6 +1,6 @@
 .wrapper {
     width: 100%;
-    background-color: white;
+    background-color: var(--card-background-color);
 }
 
 .container {
@@ -31,7 +31,11 @@
 }
 
 .job-details p {
-    color: var(--secondary-gray);
+    color: var(--text-color);
+}
+
+.job-details h2 {
+    color: var(--heading-text);
 }
 
 @media screen and (max-width:375px) {

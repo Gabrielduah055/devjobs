@@ -30,6 +30,9 @@ body {
       --position-color:#121721;
       --text-color:#9DAEC2;
       --primary-violet:  #5964E0;
+      --heading-text:black;
+      --site-background:#cfd3fd;
+      --site-color:#5964E0;
 }
 
 .dark-theme {
@@ -38,5 +41,7 @@ body {
     --position-color:#FFFFFF;
     --primary-violet:  #5964E0;
     --text-color:#9DAEC2;
-
+    --heading-text:white;
+    --site-background:rgb(83, 83, 83);
+    --site-color:white
 }

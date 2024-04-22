@@ -10,6 +10,10 @@
     padding: 4rem 2rem;
 }
 
+.card:hover {
+    cursor: pointer;
+}
+
 .time {
     display: flex;
     gap: .5rem;
@@ -27,6 +31,11 @@
     color: var(--position-color);
     margin-block-end: 1rem;
 }
+
+.card h4:hover {
+    color: var(--text-color);
+}
+
 
 .card p {
     margin-block-end: 1rem;

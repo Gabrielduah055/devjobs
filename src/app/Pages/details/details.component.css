@@ -58,7 +58,7 @@
 .site {
     margin-inline-end: 1rem;
     padding: .9rem 1.5rem;
-    font-size: 1rem;
+    font-size: .8rem;
     cursor: pointer;
     outline: none;
     border: none;
@@ -66,6 +66,10 @@
     background-color: var(--site-background);
     font-weight: 600;
     border-radius: 3px;
+}
+
+.site:hover {
+    background-color: var(--site-background-hover);
 }
 
 .job-details .job-heading {
@@ -87,7 +91,7 @@
 
 .job-details .job-heading .heading h3 {
     color: var(--heading-text);
-    font-size: 2rem;
+    font-size: 1.7rem;
 }
 
 .job-details .job-heading .heading p {
@@ -98,7 +102,7 @@
 .apply {
     padding: .5rem 2rem;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1rem;
     border: none;
     outline: none;
     background-color: var(--primary-violet);
@@ -107,6 +111,11 @@
     border-radius: 5px;
     margin-top: 2rem;
 }
+
+.apply:hover {
+    background-color: #9ea4ff
+}
+
 
 .job-content {
     color:var(--text-color);

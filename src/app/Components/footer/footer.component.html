@@ -1,8 +1,8 @@
-<div class="wrapper" >
+<div class="wrapper" *ngIf="jobDetail$ | async as job">
     <div class="container">
         <div class="job-details">
-            <h2>Senior Software Developer</h2>
-            <p>So Digital Inc.</p>
+            <h2>{{job.position}}</h2>
+            <p>{{job.company}}</p>
         </div>
         <button class="apply">Apply Now</button>
     </div>

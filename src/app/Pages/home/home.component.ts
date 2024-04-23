@@ -17,7 +17,12 @@ export class HomeComponent implements OnInit {
   jobs!: Observable<Jobs[]>;
   startIndex = 0;
   itemsPerPage = 12;
-  endIndex:number = this.itemsPerPage
+  endIndex:number = this.itemsPerPage;
+  showDropDown:boolean = false;
+
+  showOverlay:boolean = false;
+
+
   constructor(private JobsService:JobsService){}
 
   ngOnInit(): void {
@@ -37,14 +42,27 @@ export class HomeComponent implements OnInit {
   search(): void {
     this.jobs.subscribe(jobs => {
       this.searchedJobs = jobs.filter(job => {
-        let titleMatch = job.position.toLowerCase().includes(this.searchTitle.toLowerCase());
-        let locationMatch = job.location.toLowerCase().includes(this.searchLocation.toLowerCase());
-        let fullTimeMatch = !this.fullTimeOnly || job.contract;
+        let titleMatch = !this.searchTitle || job.position.toLowerCase().includes(this.searchTitle.toLowerCase());
+        let locationMatch = !this.searchLocation || job.location.toLowerCase().includes(this.searchLocation.toLowerCase());
+        let fullTimeMatch = !this.fullTimeOnly || !job.contract || job.contract.toLowerCase() === 'full time';
+
+
+
+      
 
         return titleMatch && locationMatch && fullTimeMatch
       })
+
+      this.showDropDown = !this.showDropDown
     })
   }
+
+  toggleDropdown() {
+    this.showDropDown = !this.showDropDown
+  }
+
+
+  
 
 
  

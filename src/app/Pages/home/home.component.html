@@ -1,55 +1,73 @@
-<div class="container">
-    <div class="wrapper">
-        <div class="search-container">
-            <div class="input">
-                <img src="../../../assets/icon-search.svg" alt="">
-                <input 
-                    type="text" 
-                    placeholder="Filter by title, companies expetise..." 
-                    class="title"
-                    [(ngModel)]="searchTitle"/>
-            </div>
-            <div class="input input-location">
-                <img src="../../../assets/icon-location.svg" alt="">
-                <input 
-                    type="text" 
-                    placeholder="Filter by location..." class="location"
-                    [(ngModel)]="searchLocation"
-                    />
-            </div>
-            <div class="input input-filter">
-                <div class="filter">
-                    <input type="checkbox"
-                    [(ngModel)]="fullTimeOnly"/>
-                    <label for="">Full time only</label>
-                </div>
-                
-                <button class="search-btn" (click)="search()">Search</button>
-            </div>
-
-            <div class="icon-placeholder" >
-                <img src="../../../assets/logos/icon-filter.svg" alt="">
-                <ion-icon name="search"></ion-icon>
-            </div>
-    
+<div class="container" [ngClass]="{ 'overlay-active': showOverlay }">
+  <div class="wrapper">
+    <div class="search-container">
+      <div class="input">
+        <img src="../../../assets/icon-search.svg" alt="" />
+        <input
+          type="text"
+          placeholder="Filter by title, companies expetise..."
+          class="title"
+          [(ngModel)]="searchTitle"
+        />
+      </div>
+      <div class="input input-location">
+        <img src="../../../assets/icon-location.svg" alt="" />
+        <input
+          type="text"
+          placeholder="Filter by location..."
+          class="location"
+          [(ngModel)]="searchLocation"
+        />
+      </div>
+      <div class="input input-filter">
+        <div class="filter">
+          <input type="checkbox" [(ngModel)]="fullTimeOnly" />
+          <label for="">Full time only</label>
         </div>
+
+        <button class="search-btn" (click)="search()">Search</button>
+      </div>
+
+      <div class="icon-placeholder">
+        <img
+          src="../../../assets/logos/icon-filter.svg"
+          alt=""
+          (click)="toggleDropdown()"
+        />
+        <ion-icon name="search" (click)="search()"></ion-icon>
+      </div>
     </div>
-        <div class="cards">
-                <div class="card" >
-                    <app-card *ngFor="let job of searchedJobs" [job]="job">
-                    </app-card>
-                </div>
-                
-            
-    
-            
+
+    <div class="dropdown" *ngIf="showDropDown">
+      <div class="backdrop"></div>
+      <div class="dropdown-content">
+        <div class="dropdown-location">
+          <img src="../../../assets/icon-location.svg" alt="" />
+          <input
+            type="text"
+            placeholder="Filter by location..."
+            class="location"
+            [(ngModel)]="searchLocation"
+          />
+        </div>
+        <hr />
+        <div class="dropdown-check">
+          <input type="checkbox" [(ngModel)]="fullTimeOnly" />
+          <label for="">Full time only</label>
         </div>
 
-        <div class="butotn">    
-            <button class="btn" >Load More</button>
-        </div>
-        
-        
-    
-    
+        <button class="dropdown-search" (click)="search()">Search</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <app-card *ngFor="let job of searchedJobs" [job]="job"> </app-card>
+    </div>
+  </div>
+
+  <div class="butotn">
+    <button class="btn">Load More</button>
+  </div>
 </div>

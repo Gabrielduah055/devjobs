@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { JobsService } from 'src/app/service/jobs.service';
 import { Jobs } from 'src/app/types';
 import {animate, style, transition, trigger} from '@angular/animations'
@@ -24,8 +24,8 @@ export class HomeComponent implements OnInit {
   searchTitle:string = '';
   searchLocation: string = '';
   fullTimeOnly:boolean = false;
-  searchedJobs: Jobs[] = []
- 
+  searchedJobs: Jobs[] = [];
+  
   jobs!: Observable<Jobs[]>;
   startIndex = 0;
   itemsPerPage = 12;
@@ -38,10 +38,16 @@ export class HomeComponent implements OnInit {
 
   constructor(private JobsService:JobsService){}
 
+
+
   ngOnInit(): void {
      this.jobs = this.JobsService.getJobs()
      this.search();
   }
+
+
+
+  
 
   loadMore():void {
     this.endIndex += this.itemsPerPage;
@@ -65,6 +71,8 @@ export class HomeComponent implements OnInit {
       this.showLoadMore = false
       this.showDropDown = !this.showDropDown
     })
+
+
   }
 
   toggleDropdown() {

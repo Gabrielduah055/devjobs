@@ -167,17 +167,21 @@ ol li::marker{
         position: relative;
     }
 
-    .header {
+    .container .header {
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         height: 100%;
+        position: relative;
+        z-index: 1000;
+        margin-top: -3rem;
     }
 
     .background {
         padding: 1.2rem;
         width: 50px;
+        height: 50px;
         border-radius: 10px;
         z-index: 10;
         margin-top: -1rem;
@@ -217,6 +221,7 @@ ol li::marker{
         font-weight: 500;
         font-size: .9rem;
         padding: .5rem 2rem;
+        text-align: center;
     }
 
    

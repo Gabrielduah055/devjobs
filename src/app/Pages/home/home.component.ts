@@ -18,9 +18,9 @@ export class HomeComponent implements OnInit {
   startIndex = 0;
   itemsPerPage = 12;
   endIndex:number = this.itemsPerPage;
-  showDropDown:boolean = false;
+  showDropDown:boolean = true;
 
-  showOverlay:boolean = false;
+  showOverlay:boolean = true;
 
 
   constructor(private JobsService:JobsService){}

@@ -1,10 +1,12 @@
 <div class="wrapper">
     <div class="container">
         <img src="../../../assets/logo.svg" alt="">
-        <div class="toggle" (click)="toggleTheme()">
+        <div class="toggle" >
             <img src="../../../assets/icon-sun.svg" alt="" *ngIf="theme === 'light-theme'">
-            <ion-icon name="toggle" *ngIf="theme === 'light-theme'"></ion-icon>
-            <img src="../../../assets/icon-moon.svg" alt="" *ngIf="theme === 'dark-theme'">
+            <div class="toggle-icon" (click)="toggleTheme()">
+                <div class="toggle-inside"></div>
+            </div>
+            <img src="../../../assets/icon-moon.svg" alt="" >
         </div>
     </div>
 </div>

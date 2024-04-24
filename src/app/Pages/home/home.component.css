@@ -10,6 +10,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-block: 1.5rem;
 }
 
 .card {
@@ -63,7 +64,7 @@
     display: flex;
     align-items: center;
     gap: .5rem;
-    
+    color: var(--text-color);
 }
 
 .input .title {
@@ -75,6 +76,7 @@
     background-color: transparent;
     border-right: 1px solid var(--text-color) ;
     cursor:pointer;
+    color: var(--text-color);
 }
 
 .input .location {
@@ -86,7 +88,7 @@
     background-color: transparent;
     border-right: 1px solid var(--text-color)    ;
     cursor:pointer;
-    
+    color: var(--text-color);
     
 }
 

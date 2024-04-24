@@ -66,6 +66,7 @@
     background-color: var(--site-background);
     font-weight: 600;
     border-radius: 3px;
+    text-decoration: none;
 }
 
 .site:hover {

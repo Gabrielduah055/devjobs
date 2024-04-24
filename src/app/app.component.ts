@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
 
   theme: theme = this.getThemeFromLocalStorage() || 'light-theme';
   isLightTheme:boolean = this.theme ==='light-theme'
+  
 
   constructor(@Inject(DOCUMENT) private readonly document: Document, private readonly renderer:Renderer2) {}
 
@@ -28,7 +29,6 @@ export class AppComponent implements OnInit {
     } else {
       toggleInside.style.left = '25%'
     }
-    console.log('click is worlig')
   }
 
   addThemeLocalStorage(theme: theme):void {

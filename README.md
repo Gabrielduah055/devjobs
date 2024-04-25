@@ -27,3 +27,27 @@ Users should be able to:
 
 ### Screenshot
 
+![](./src/assets/logos/job1.png)
+ [](./src/assets/logos/job2.png)
+ [](./src/assets/logos/job3.png)
+
+ ### Links
+
+- Solution URL: [Add solution URL here](https://github.com/Gabrielduah055/devjobs)
+- Live Site URL: [Add live site URL here](hhttps://gabbyshub.vercel.app/)
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- [Angular](https://angular.dev/) - JS Framework
+
+## Author
+
+- Website - (https://github.com/Gabrielduah055/amalitechPassword/blob/master)
+- Twitter - (https://twitter.com/gabrielduah8)

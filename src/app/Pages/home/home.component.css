@@ -54,7 +54,7 @@
     margin: 0 auto;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: .5rem;
     border-radius: 5px;
     background-color: var(--card-background-color);
     padding: 1rem;
@@ -93,7 +93,7 @@
 }
 
 .input-filter {
-    margin-left: 1rem;
+    margin-left: .5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -143,9 +143,7 @@
 
 
 @media screen and (max-width:375px){
-    .wrapper {
-        width: 100%;
-    }
+    
 
     .overlay {
         position: fixed;
@@ -194,7 +192,7 @@
     }
     
     .dropdown-content {
-        width: 300px;
+        width: calc(100% - 5rem);
         border-radius: 8px;
         position: absolute;
         z-index: 10000;
@@ -203,6 +201,7 @@
         transform: translate(-50%, -50%);
         display: flex;
         flex-direction: column;
+        justify-content: center;
         gap: 1rem;
         background-color: var(--card-background-color);
         overflow: hidden;
@@ -301,14 +300,15 @@
     }
 
     .card {
-        width: 100%;
         place-items: center;
-        padding: 1rem;
+        padding: .5rem;
         z-index: -10;
     }
 
     
 }
+
+
 
 @media screen and (max-width:768px) {
     .container {
@@ -316,7 +316,7 @@
     }
 
     .search-container {
-        width: calc(100% - 3rem);
+        width: calc(100% - 5rem);
         margin: 0 auto;
         display: flex;
     }

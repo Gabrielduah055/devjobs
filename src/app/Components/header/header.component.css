@@ -69,5 +69,6 @@
     .container  {
         width:calc(100% - 5rem);
         margin: 0 auto;
+        padding-inline: 1.5rem;
     }
 }

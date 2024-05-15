@@ -43,7 +43,7 @@
     color: var(--heading-text);
 }
 
-@media screen and (max-width:375px) {
+@media screen and (min-width:375px) and (max-width:768px){
     .wrapper {
         width: 100%;
     }

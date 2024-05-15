@@ -153,7 +153,7 @@ ol li::marker{
     color: #5964E0; 
 }
 
-@media screen and (max-width:375px){
+@media screen and (min-width:375px) and (max-width:768px){
     .container {
         width: 100%;
         padding: 1rem;
@@ -227,7 +227,7 @@ ol li::marker{
    
 }
 
-@media screen and (max-width:768px) {
+@media screen and (min-width:768px) and (max-width:1200px){
        .container {
         width: 100%;
        }

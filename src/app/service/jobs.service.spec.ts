@@ -8,7 +8,6 @@ import { JobsService } from './jobs.service';
 
 describe('JobsService', () => {
   let service: JobsService;
-  let httpClient:HttpClient;
   let httpTestingController: HttpTestingController;
 
   beforeEach(() => {
@@ -17,7 +16,6 @@ describe('JobsService', () => {
       providers:[JobsService]
     });
     service = TestBed.inject(JobsService);
-    httpClient = TestBed.inject(HttpClient);
     httpTestingController = TestBed.inject(HttpTestingController)
   });
 
@@ -61,11 +59,11 @@ describe('JobsService', () => {
     req.flush(mockJobs)
   });
 
-  it('should handle errors properly', () => {
+  it('should handle errors properly when fetching all jobs', () => {
     const errorMessage = '404 Not Found';
 
     service.getJobs().subscribe(
-      () => {},
+      () => fail('expected an error'),
       error => {
         expect(error).toBeTruthy();
         expect(error).toBe('Something went wrong while fetching jobs data. Please try again later.')
@@ -73,6 +71,21 @@ describe('JobsService', () => {
     );
 
     const req = httpTestingController.expectOne('https://64281ee346fd35eb7c4bfc31.mockapi.io/dev');
+    req.error(new ErrorEvent(errorMessage), {status:404});
+  });
+
+  it('should handle errors when getting a job by id', () => {
+    const errorMessage = '404 Not Found';
+
+    service.getJobById(1).subscribe(
+      ()=> fail,
+      error => {
+        expect(error).toBeTruthy();
+        expect(error).toBe('Something went wrong while fetching job data by ID. Please try again later')
+      }
+    )
+
+    const req = httpTestingController.expectOne('https://64281ee346fd35eb7c4bfc31.mockapi.io/dev/1');
     req.error(new ErrorEvent(errorMessage), {status:404});
   })
 });

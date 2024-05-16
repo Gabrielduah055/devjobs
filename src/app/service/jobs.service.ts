@@ -19,28 +19,27 @@ export class JobsService {
   getJobs() :Observable<Jobs[]> {
     return this.http.get<Jobs[]>(this.jsonUrl)
     .pipe(
-      catchError(this.handleError)
+      catchError(this.handleJobsError)
     )
   }
 
-  
 
-  private handleError(error: HttpErrorResponse): Observable<never> {
-    if(error.error instanceof ErrorEvent) {
-      console.error('An error occurred: ', error.error.message)
-    } else {
-      console.error(
-        `Status code ${error.status} ` + 
-        `body was: ${error.error}` 
-      )
-    }
-    return throwError(()=> 'Something went wrong while fetching jobs data. Please try again later.')
+  private handleJobsError(error:HttpErrorResponse): Observable<never> {
+    console.error('error occurred while fetching jobs:', error);
+    return throwError(() => 'Something went wrong while fetching jobs data. Please try again later.')
   }
 
-  getJobById(id:number): Observable<Jobs> {
+  private handleJobsByIdError(error:HttpErrorResponse): Observable<string> {
+    console.error('error occurd while fetching jobs by ID:', error);
+    return throwError('Something went wrong while fetching job data by ID. Please try again later')
+  }
+
+  getJobById(id: number): Observable<Jobs> {
     const url = `${this.jsonUrl}/${id}`;
     return this.http.get<Jobs>(url).pipe(
-      catchError(this.handleError)
+      catchError(error => this.handleJobsByIdError(error).pipe(map(errorMessage => {
+        throw new Error(errorMessage);
+      })))
     )
   }
 

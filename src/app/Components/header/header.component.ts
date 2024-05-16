@@ -1,5 +1,10 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
 
+
+enum theme{
+  LightTheme = 'light-theme',
+  DarkTheme = 'dark-theme'
+}
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -7,8 +12,10 @@ import { Component, Output, EventEmitter, Input } from '@angular/core';
 })
 export class HeaderComponent {
 
-  @Input() theme:string = 'light-theme';
-  @Output() switchTheme = new EventEmitter();
+
+
+  @Input() theme:string = theme.LightTheme;
+  @Output() switchTheme = new EventEmitter<void>();
 
   toggleTheme():void {
     this.switchTheme.emit();

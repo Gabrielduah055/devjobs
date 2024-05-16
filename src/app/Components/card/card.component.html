@@ -1,5 +1,5 @@
 
-        <div class="card" *ngIf="job" [routerLink]="'details/' + job.id">
+        <a class="card" *ngIf="job" [routerLink]="'details/' + job.id">
             <div class="logo" [style.background-color]="job.logoBackground">
                 <img [src]=job.logo alt="">
             </div>
@@ -18,6 +18,6 @@
                     <p>{{job.location}}</p>
                 </div>
             </div>
-        </div>
+        </a>
         
 

@@ -12,22 +12,24 @@
       </div>
      
 
-
-      <div class="input input-location">
-        <img src="../../../assets/icon-location.svg" alt="" />
-        <input
-          type="text"
-          placeholder="Filter by location..."
-          class="location"
-          [(ngModel)]="searchLocation"
-        />
-      </div>
+    
+        <div class="input input-location">
+          <img src="../../../assets/icon-location.svg" alt="" />
+          <div class="location-dropdown" *ngIf="showLocationDropdown">
+            <div class="dropping">
+              <select class="locationDropdown" [(ngModel)] = "selectedCountry">
+                <option value=""></option>
+                <option *ngFor="let country of countries"[value]= "country">{{country}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      
       <div class="input input-filter">
         <div class="filter">
           <input type="checkbox" [(ngModel)]="fullTimeOnly" />
           <label for="">Full time only</label>
         </div>
-
         <button class="search-btn" (click)="search()">Search</button>
       </div>
 

@@ -43,5 +43,20 @@ export class JobsService {
     )
   }
 
+  getJobCountries(): Observable<string[]> {
+    return this.getJobs().pipe(
+      map((jobs: Jobs[]) => {
+        const countries: string[] = [];
+        jobs.forEach((job) => {
+          if (!countries.includes(job.location)) {
+            countries.push(job.location);
+          }
+        });
+        return countries;
+      }),
+      catchError(this.handleJobsError)
+    );
+  }
+
 
 }

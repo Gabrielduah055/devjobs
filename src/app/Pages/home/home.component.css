@@ -79,7 +79,8 @@
     color: var(--text-color);
 }
 
-.input .location {
+.input-location {
+    position: relative;
     width: 400px;
     font-size: 1rem;
     padding: .5rem;
@@ -92,12 +93,39 @@
     
 }
 
+.location-dropdown {
+    width: 100%;
+    position: relative;
+
+}
+
+.locationDropdown {
+    width: 100%;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: var(--text-color);
+    
+}
+
+.locationDropdown {
+
+}
+.locationDropdown option {
+    background-color: var(--card-background-color);
+    border: none;
+    outline: none;
+}
+
+
+
 .input-filter {
     margin-left: .5rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     width: 100%;
+    flex: 1;
 }
 
 .input-filter .filter {
@@ -136,6 +164,7 @@
 .dropdown {
     display: none;
 }
+
 
 
 /* MEDIA QUERY FOR TABLET SCREENS */

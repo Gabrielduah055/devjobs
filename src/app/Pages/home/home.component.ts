@@ -79,6 +79,9 @@ export class HomeComponent implements OnInit {
     this.showDropDown = !this.showDropDown
   }
 
+  close():void {
+    this.showDropDown = !this.showDropDown
+  }
 
  
 

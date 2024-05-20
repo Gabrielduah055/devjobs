@@ -16,18 +16,18 @@ export class AppComponent implements OnInit {
 
   constructor(@Inject(DOCUMENT) private readonly document: Document, private readonly renderer:Renderer2) {}
 
-  toggleTheme():void {
+  toggleTheme(): void {
     const newTheme = this.theme === 'light-theme' ? 'dark-theme' : 'light-theme';
     const isLightTheme = this.theme === 'light-theme' && newTheme === 'dark-theme';
     this.document.body.classList.replace(this.theme, newTheme);
     this.theme = newTheme;
-    this.addThemeLocalStorage(this.theme)
-
-    const toggleInside = document.querySelector('.toggle-inside') as HTMLElement;
-    if(isLightTheme) {
-      toggleInside.style.left = '70%'
+    this.addThemeLocalStorage(this.theme);
+  
+    const toggleInside = this.document.querySelector('.toggle-inside') as HTMLElement;
+    if (isLightTheme) {
+      toggleInside.style.left = '70%';
     } else {
-      toggleInside.style.left = '25%'
+      toggleInside.style.left = '25%';
     }
   }
 

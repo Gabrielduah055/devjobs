@@ -12,7 +12,6 @@ import { DetailsComponent } from './Pages/details/details.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { CardComponent } from './Components/card/card.component';
 import { FooterComponent } from './Components/footer/footer.component';
-import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -30,7 +29,6 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     BrowserAnimationsModule,
     CommonModule,
-    RouterModule
   ],
   providers: [],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],

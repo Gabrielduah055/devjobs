@@ -56,19 +56,19 @@ export class HomeComponent implements OnInit {
   
 
   loadMore():void {
-    this.endIndex += this.itemsPerPage;
+    this.endIndex += 1;
 
   }
 
   showLoadMoreButton(): boolean {
-    return this.jobs ? this.endIndex < this.searchedJobs.length : false;
+    return this.searchedJobs.length > this.endIndex;
   }
 
   search(): void {
     this.jobs.subscribe(jobs => {
       this.searchedJobs = jobs.filter(job => {
-        let titleMatch = !this.searchTitle || job.position.toLowerCase().includes(this.searchTitle.toLowerCase());
-        let locationMatch = !this.selectedCountry || job.location.toLowerCase().includes(this.selectedCountry.toLowerCase());
+        let titleMatch =  job.position.toLowerCase().includes(this.searchTitle.toLowerCase());
+        let locationMatch = this.selectedCountry === '' || job.location.toLowerCase().includes(this.selectedCountry.toLowerCase());
         let fullTimeMatch = !this.fullTimeOnly || !job.contract || job.contract.toLowerCase() === 'full time';
 
         return titleMatch && locationMatch && fullTimeMatch
@@ -86,7 +86,7 @@ export class HomeComponent implements OnInit {
   }
 
   close():void {
-    this.showDropDown = !this.showDropDown
+    this.showDropDown = false
   }
 
  

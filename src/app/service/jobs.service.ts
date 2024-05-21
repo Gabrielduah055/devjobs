@@ -34,6 +34,7 @@ export class JobsService {
     return throwError('Something went wrong while fetching job data by ID. Please try again later')
   }
 
+
   getJobById(id: number): Observable<Jobs> {
     const url = `${this.jsonUrl}/${id}`;
     return this.http.get<Jobs>(url).pipe(

@@ -25,6 +25,8 @@ export class HomeComponent implements OnInit {
   searchLocation: string = '';
   fullTimeOnly:boolean = false;
   searchedJobs: Jobs[] = [];
+  countries:string[] = [];
+  selectedCountry: string = '';
   
   jobs!: Observable<Jobs[]>;
   startIndex = 0;
@@ -32,7 +34,7 @@ export class HomeComponent implements OnInit {
   endIndex:number = this.itemsPerPage;
   showDropDown:boolean = true;
   showLoadMore = true;
-
+  showLocationDropdown:boolean = true
   showOverlay:boolean = true;
 
 
@@ -43,6 +45,10 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
      this.jobs = this.JobsService.getJobs()
      this.search();
+
+     this.JobsService.getJobCountries().subscribe((countries) => {
+      this.countries = countries
+     })
   }
 
 
@@ -50,19 +56,19 @@ export class HomeComponent implements OnInit {
   
 
   loadMore():void {
-    this.endIndex += this.itemsPerPage;
+    this.endIndex += 1;
 
   }
 
   showLoadMoreButton(): boolean {
-    return this.jobs ? this.endIndex < this.searchedJobs.length : false;
+    return this.searchedJobs.length > this.endIndex;
   }
 
   search(): void {
     this.jobs.subscribe(jobs => {
       this.searchedJobs = jobs.filter(job => {
-        let titleMatch = !this.searchTitle || job.position.toLowerCase().includes(this.searchTitle.toLowerCase());
-        let locationMatch = !this.searchLocation || job.location.toLowerCase().includes(this.searchLocation.toLowerCase());
+        let titleMatch =  job.position.toLowerCase().includes(this.searchTitle.toLowerCase());
+        let locationMatch = this.selectedCountry === '' || job.location.toLowerCase().includes(this.selectedCountry.toLowerCase());
         let fullTimeMatch = !this.fullTimeOnly || !job.contract || job.contract.toLowerCase() === 'full time';
 
         return titleMatch && locationMatch && fullTimeMatch
@@ -79,6 +85,9 @@ export class HomeComponent implements OnInit {
     this.showDropDown = !this.showDropDown
   }
 
+  close():void {
+    this.showDropDown = false
+  }
 
  
 

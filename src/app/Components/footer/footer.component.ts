@@ -4,6 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import { JobsService } from 'src/app/service/jobs.service';
 import { Observable } from 'rxjs';
 
+
+
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
@@ -17,9 +19,8 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      const jobId = params['id'];
+      const jobId = +params['id'];
       this.jobDetail$ = this.jobService.getJobById(jobId)
-      console.log("job Id:", jobId)
     })
   }
 }

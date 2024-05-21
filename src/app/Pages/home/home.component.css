@@ -79,7 +79,8 @@
     color: var(--text-color);
 }
 
-.input .location {
+.input-location {
+    position: relative;
     width: 400px;
     font-size: 1rem;
     padding: .5rem;
@@ -92,12 +93,39 @@
     
 }
 
+.location-dropdown {
+    width: 100%;
+    position: relative;
+
+}
+
+.locationDropdown {
+    width: 100%;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: var(--text-color);
+    
+}
+
+.locationDropdown {
+
+}
+.locationDropdown option {
+    background-color: var(--card-background-color);
+    border: none;
+    outline: none;
+}
+
+
+
 .input-filter {
     margin-left: .5rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     width: 100%;
+    flex: 1;
 }
 
 .input-filter .filter {
@@ -138,6 +166,7 @@
 }
 
 
+
 /* MEDIA QUERY FOR TABLET SCREENS */
 
 
@@ -161,18 +190,6 @@
 
 
     .dropdown {
-        /* position: absolute;
-        top: 5%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        
-        width: 290px;
-        background-color: white;
-        display: block;
-        margin: 0 auto;
-        padding: 1rem;
-        border-radius: 8px;
-        z-index: 1000; */
         position: fixed;
         display: block;
         top: 0;
@@ -204,7 +221,6 @@
         justify-content: center;
         gap: 1rem;
         background-color: var(--card-background-color);
-        overflow: hidden;
         padding: 1.5rem;
     }
 
@@ -248,6 +264,16 @@
         border-radius: 5px;
         font-weight: 500;
         cursor: pointer;
+    }
+
+    .dropdown .icon-close {
+        color: white;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: -2rem;
     }
 
     .search-container {

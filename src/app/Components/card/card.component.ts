@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Jobs } from 'src/app/types';
 
+
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
